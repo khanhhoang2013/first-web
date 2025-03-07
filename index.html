@@ -1,113 +1,75 @@
 <!DOCTYPE html>
 <html>
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
-<head>
-<title>about aff cup</title>
-</head>
+
 <body>
 
-<h1> History of AFF Cup</h1>
-<p>The ASEAN Championship (formerly known as the AFF Championship or the AFF Cup), currently known as the ASEAN Mitsubishi Electric Cup for sponsorship reasons, is the biennial football tournament organized by the ASEAN Football Federation (AFF) for men's national teams in Southeast Asia.
+    <h2>Simple Calculator</h2>
+    <div id="keyboard">
+        <input type="text" id="fname" name="fname" readonly 
+            style="width: 205px; height:50px; font-size: 30px; text-align: right;"><br>
 
-A biennial international competition, it is contested to determine the sub-continental champion of Southeast Asia. The competition has been held every two years since 1996, scheduled to be in the even-numbered year, except for 2007, and 2020.
+        <input type="button" value="AC" onclick="clearInput()" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="+/-" onclick="toggleSign()" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="%" onclick="addToInput('%')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="/" onclick="addToInput('/')" style="width: 50px; height:50px; font-size: 20px;">
 
-<p><b> Thailand has won seven titles, Singapore four, Vietnam three, and Malaysia one. </b></p>
-. To date, Thailand and Singapore are the only teams to have won consecutive titles. 
-<p><i>Thailand did it three times: in 2000, 2002, 2014, 2016, 2020, and 2022, while Singapore did it once in 2004 and 2007</i></p>
-, an AFF member outside Southeast Asia, has not played the ASEAN Championship due to the initial agreement. It is one of the most watched football tournaments in the region. The ASEAN Championship has also been recognized as an official tournament by FIFA since 7 December 2024, having previously been recognized as a Category A tournament since 2016.[1][2][3]
+        <br>
 
-Since 2018, the championship winners would compete in the following AFF–EAFF Champions Trophy, against the winner of the EAFF E-1 Football Championship (East Asia).
+        <input type="button" value="1" onclick="addToInput('1')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="2" onclick="addToInput('2')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="3" onclick="addToInput('3')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="+" onclick="addToInput('+')" style="width: 50px; height:50px; font-size: 20px;">
 
-<p style="font-size:25px; color:red;">The defending tournament champions are Vietnam, after a 5-3 aggregate victory over Thailand in the 2024 ASEAN Championship final</p>
+        <br>
 
-History
-<p><i>The first ASEAN Championship took place in 1996 with the six founding members of the ASEAN Federation competing with four nations being invited that came in that region. The final saw Thailand becoming the first champions of ASEAN as they defeated Malaysia 1–0 in Singapore.</i></p>
-[4] The top four nations automatically qualified through to the finals in the following edition. This meant the other six nations had to compete in qualifying for the remaining four spots. Myanmar, Singapore, Laos and Philippines all made it through to the main tournament. The tournament has been the only regional competition for national teams since men's football at the SEA Games was for U23 in 2001. No country has ever won the AFF Championship title three times in a row. Singapore (2004 and 2007) and Thailand (2000 and 2002 and again in 2014 and 2016) have won twice in a row.
+        <input type="button" value="4" onclick="addToInput('4')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="5" onclick="addToInput('5')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="6" onclick="addToInput('6')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="-" onclick="addToInput('-')" style="width: 50px; height:50px; font-size: 20px;">
 
-Although having joined the AFF on 27 August 2013, Australia, a member outside Southeast Asia, has not played the ASEAN Championship as part of the initial agreement, though Australia has started searching for ways to enter the tournament in recent years due to growth of various Southeast Asian national teams, due to internal pressures, and due to Southeast Asian interests in seeing more competitive football to improve consistency..</p>
+        <br>
 
-<h1>winner each tournament</h1>
-<table style="width:100%">
-  <tr>
-    <th>year</th>
-    <th>winner</th>
- </tr>
-  <tr>
-    <td>1996</td>
-    <td>thailand</td>
-  </tr>
-  <tr>
-    <td>1998</td>
-    <td>singapore</td>
-  </tr>
-  <tr>
-    <td>2000</td>
-    <td>thailand</td>
-    </tr>
-  <tr>
-    <td>2002</td>
-    <td>thailand</td>
-  </tr>
-  <tr>
-    <td>2004</td>
-    <td>singapore</td>
-  </tr>
-  <tr>
-    <td>2007</td>
-    <td>singapore</td>
-  </tr>
-  <tr>
-    <td>2008</td>
-    <td>viet nam</td>
-  </tr>
-  <tr>
-    <td>2010</td>
-    <td>malaysia</td>
-  </tr> 
-  <tr>
-    <td>2012</td>
-    <td>singapore</td>
-    </tr>
-  <tr>
-    <td>2014</td>
-    <td>thailand</td></tr>
-  <tr>
-    <td>2016</td>
-    <td>thailand</td>
-    </tr>
-  <tr>
-    <td>2018</td>
-    <td>viet nam</td>
-    </tr>
-  <tr>
-    <td>2020</td>
-    <td>thailand</td>
-    </tr>
-  <tr>
-    <td>2022</td>
-    <td>thailand</td>
-    </tr>
-  <tr>
-    <td>2024</td>
-    <td>viet nam</td>   
+        <input type="button" value="7" onclick="addToInput('7')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="8" onclick="addToInput('8')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="9" onclick="addToInput('9')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="*" onclick="addToInput('*')" style="width: 50px; height:50px; font-size: 20px;">
 
+        <br>
 
-</table>
-<h1>road to champion</h1>
-<img src="1.png" alt="Trulli" width="500" height="333">
-<img src="2.png" alt="Trulli" width="500" height="333">
-<img src="4.png" alt="Trulli" width="500" height="333">
-<img src="6.png" alt="Trulli" width="500" height="333">
-<img src="3.png" alt="Trulli" width="500" height="333">
-<img src="5.png" alt="Trulli" width="500" height="333">
-<h1>final match</h1>
-<video width="400" controls>
-  <source src="videoplayback.mp4" type="video/mp4">
-</video>
+        <input type="button" value="0" onclick="addToInput('0')" style="width: 104px; height:50px; font-size: 20px;">
+        <input type="button" value="." onclick="addToInput('.')" style="width: 50px; height:50px; font-size: 20px;">
+        <input type="button" value="=" onclick="calculateResult()" style="width: 50px; height:50px; font-size: 20px;">
+    </div>
+
+    <script>
+        function addToInput(value) {
+            document.getElementById("fname").value += value;
+        }
+
+        function clearInput() {
+            document.getElementById("fname").value = "";
+        }
+
+        function calculateResult() {
+            let inputField = document.getElementById("fname");
+            let expression = inputField.value; // Convert commas to dots for decimals
+            try {
+                inputField.value = eval(expression); // Calculate result
+            } catch (e) {
+                inputField.value = "Error"; // If invalid expression
+            }
+        }
+
+        function toggleSign() {
+            let inputField = document.getElementById("fname");
+            let value = inputField.value;
+
+            if (value !== "" && !isNaN(value)) {
+                inputField.value = value.startsWith('-') ? value.substring(1) : '-' + value;
+            }
+        }
+    </script>
 
 </body>
+
 </html>
