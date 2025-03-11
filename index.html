@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <style>
+        /* Center the calculator */
+        .calculator-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Optional: Add a border and padding for better visibility */
+        #keyboard {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
 <body>
 
-    <h2>Simple Calculator</h2>
-    <div id="keyboard">
-        <input type="text" id="fname" name="fname" readonly 
-            style="width: 205px; height:50px; font-size: 30px; text-align: right;"><br>
+    <div class="calculator-container">
+        <div id="keyboard">
+            <h2>Simple Calculator</h2>
+            <input type="text" id="fname" name="fname" readonly 
+                style="width: 205px; height:50px; font-size: 30px; text-align: right;"><br>
 
-        <input type="button" value="AC" onclick="clearInput()" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="+/-" onclick="toggleSign()" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="%" onclick="addToInput('%')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="/" onclick="addToInput('/')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="AC" onclick="clearInput()" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="+/-" onclick="toggleSign()" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="%" onclick="addToInput('%')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="/" onclick="addToInput('/')" style="width: 50px; height:50px; font-size: 20px;">
+            <br>
 
-        <br>
+            <input type="button" value="1" onclick="addToInput('1')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="2" onclick="addToInput('2')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="3" onclick="addToInput('3')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="+" onclick="addToInput('+')" style="width: 50px; height:50px; font-size: 20px;">
+            <br>
 
-        <input type="button" value="1" onclick="addToInput('1')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="2" onclick="addToInput('2')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="3" onclick="addToInput('3')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="+" onclick="addToInput('+')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="4" onclick="addToInput('4')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="5" onclick="addToInput('5')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="6" onclick="addToInput('6')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="-" onclick="addToInput('-')" style="width: 50px; height:50px; font-size: 20px;">
+            <br>
 
-        <br>
+            <input type="button" value="7" onclick="addToInput('7')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="8" onclick="addToInput('8')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="9" onclick="addToInput('9')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="*" onclick="addToInput('*')" style="width: 50px; height:50px; font-size: 20px;">
+            <br>
 
-        <input type="button" value="4" onclick="addToInput('4')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="5" onclick="addToInput('5')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="6" onclick="addToInput('6')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="-" onclick="addToInput('-')" style="width: 50px; height:50px; font-size: 20px;">
-
-        <br>
-
-        <input type="button" value="7" onclick="addToInput('7')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="8" onclick="addToInput('8')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="9" onclick="addToInput('9')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="*" onclick="addToInput('*')" style="width: 50px; height:50px; font-size: 20px;">
-
-        <br>
-
-        <input type="button" value="0" onclick="addToInput('0')" style="width: 104px; height:50px; font-size: 20px;">
-        <input type="button" value="." onclick="addToInput('.')" style="width: 50px; height:50px; font-size: 20px;">
-        <input type="button" value="=" onclick="calculateResult()" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="0" onclick="addToInput('0')" style="width: 104px; height:50px; font-size: 20px;">
+            <input type="button" value="." onclick="addToInput('.')" style="width: 50px; height:50px; font-size: 20px;">
+            <input type="button" value="=" onclick="calculateResult()" style="width: 50px; height:50px; font-size: 20px;">
+        </div>
     </div>
 
     <script>
@@ -52,11 +72,11 @@
 
         function calculateResult() {
             let inputField = document.getElementById("fname");
-            let expression = inputField.value; // Convert commas to dots for decimals
+            let expression = inputField.value;
             try {
-                inputField.value = eval(expression); // Calculate result
+                inputField.value = eval(expression);
             } catch (e) {
-                inputField.value = "Error"; // If invalid expression
+                inputField.value = "Error";
             }
         }
 
