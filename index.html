@@ -4,84 +4,127 @@
 <head>
     <style>
         /* Center the calculator */
-        .calculator-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full viewport height */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light gray or white */
+    margin: 0;
+}
+
+/* Calculator container */
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 320px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black; /* Black calculator area */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Slight shadow effect */
+}
+
+/* Display styling */
+#display {
+    grid-column: span 4;
+    height: 80px;
+    text-align: right;
+    font-size: 40px;
+    color: black; /* Black text */
+    background: white; /* White background */
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+        /* Button styling */
+        .btn {
+            width: 70px;
+            height: 70px;
+            font-size: 25px;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
         }
 
-        /* Optional: Add a border and padding for better visibility */
-        #keyboard {
-            text-align: center;
-            padding: 20px;
-            border: 2px solid black;
-            border-radius: 10px;
-            background-color: lightgray;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        /* Number buttons */
+        .btn.number {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Operator buttons */
+        .btn.operator {
+            background-color: orange;
+            color: white;
+        }
+
+        /* Function buttons */
+        .btn.function {
+            background-color: #777;
+            color: black;
+        }
+
+        /* Special styling for 0 button to take two columns */
+        .btn.zero {
+            grid-column: span 2;
+            width: 150px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="calculator-container">
-        <div id="keyboard">
-            <h2>Simple Calculator</h2>
-            <input type="text" id="fname" name="fname" readonly 
-                style="width: 205px; height:50px; font-size: 30px; text-align: right;"><br>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
 
-            <input type="button" value="AC" onclick="clearInput()" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="+/-" onclick="toggleSign()" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="%" onclick="addToInput('%')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="/" onclick="addToInput('/')" style="width: 50px; height:50px; font-size: 20px;">
-            <br>
+        <button class="btn function" onclick="clearInput()">AC</button>
+        <button class="btn function" onclick="toggleSign()">+/-</button>
+        <button class="btn function" onclick="addToInput('%')">%</button>
+        <button class="btn operator" onclick="addToInput('/')">÷</button>
 
-            <input type="button" value="1" onclick="addToInput('1')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="2" onclick="addToInput('2')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="3" onclick="addToInput('3')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="+" onclick="addToInput('+')" style="width: 50px; height:50px; font-size: 20px;">
-            <br>
+        <button class="btn number" onclick="addToInput('7')">7</button>
+        <button class="btn number" onclick="addToInput('8')">8</button>
+        <button class="btn number" onclick="addToInput('9')">9</button>
+        <button class="btn operator" onclick="addToInput('*')">×</button>
 
-            <input type="button" value="4" onclick="addToInput('4')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="5" onclick="addToInput('5')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="6" onclick="addToInput('6')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="-" onclick="addToInput('-')" style="width: 50px; height:50px; font-size: 20px;">
-            <br>
+        <button class="btn number" onclick="addToInput('4')">4</button>
+        <button class="btn number" onclick="addToInput('5')">5</button>
+        <button class="btn number" onclick="addToInput('6')">6</button>
+        <button class="btn operator" onclick="addToInput('-')">−</button>
 
-            <input type="button" value="7" onclick="addToInput('7')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="8" onclick="addToInput('8')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="9" onclick="addToInput('9')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="*" onclick="addToInput('*')" style="width: 50px; height:50px; font-size: 20px;">
-            <br>
+        <button class="btn number" onclick="addToInput('1')">1</button>
+        <button class="btn number" onclick="addToInput('2')">2</button>
+        <button class="btn number" onclick="addToInput('3')">3</button>
+        <button class="btn operator" onclick="addToInput('+')">+</button>
 
-            <input type="button" value="0" onclick="addToInput('0')" style="width: 104px; height:50px; font-size: 20px;">
-            <input type="button" value="." onclick="addToInput('.')" style="width: 50px; height:50px; font-size: 20px;">
-            <input type="button" value="=" onclick="calculateResult()" style="width: 50px; height:50px; font-size: 20px;">
-        </div>
+        <button class="btn number zero" onclick="addToInput('0')">0</button>
+        <button class="btn number" onclick="addToInput('.')">.</button>
+        <button class="btn operator" onclick="calculateResult()">=</button>
     </div>
 
     <script>
         function addToInput(value) {
-            document.getElementById("fname").value += value;
+            document.getElementById("display").value += value;
         }
 
         function clearInput() {
-            document.getElementById("fname").value = "";
+            document.getElementById("display").value = "";
         }
 
         function calculateResult() {
-            let inputField = document.getElementById("fname");
-            let expression = inputField.value;
+            let inputField = document.getElementById("display");
             try {
-                inputField.value = eval(expression);
+                inputField.value = eval(inputField.value);
             } catch (e) {
                 inputField.value = "Error";
             }
         }
 
         function toggleSign() {
-            let inputField = document.getElementById("fname");
+            let inputField = document.getElementById("display");
             let value = inputField.value;
 
             if (value !== "" && !isNaN(value)) {
